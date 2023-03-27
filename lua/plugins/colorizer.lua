@@ -7,7 +7,7 @@ return {
   config = function()
     require("colorizer").setup({
       "*",
-      "!gitmessage",
+      "!gitcommit",
     }, {
       RGB = true, -- #RGB hex codes
       RRGGBB = true, -- #RRGGBB hex codes
