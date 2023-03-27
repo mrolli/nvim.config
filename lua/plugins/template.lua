@@ -7,9 +7,9 @@ if true then return {} end
 return {
   "<OWNER>/<PLUGIN>",
   enabled = true,
-  config = function()
-    require("<PLUGIN>").setup({
+  opts = {
+    -- add your options that should be passed to the setup() function here
+    --option = "value",
 
-    })
-  end,
+    }
 }
