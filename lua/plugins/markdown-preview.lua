@@ -7,7 +7,7 @@ return {
     enabled = true,
     ft = { "markdown" },
     keys = {
-      { "<C-w>p", "<Plug>MarkdownPreview", desc = "Start Markdown Preview" },
+      { "<leader>wp", "<Plug>MarkdownPreview", desc = "Start Markdown Preview" },
     },
     build = "cd app && npm install",
     init = function()
