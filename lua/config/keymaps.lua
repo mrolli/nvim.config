@@ -32,3 +32,7 @@ map("v", "<leader>y", '"+y', { desc = "Yank to clipboard" })
 map("n", "<leader>p", '"+p', { desc = "Paste from clipboard" })
 map("n", "<leader>P", '"+P', { desc = "Paste from clipboard" })
 map("v", "<leader>p", '"+p', { desc = "Paste from clipboard" })
+
+-- Deliberately delete to black hole register
+map("n", "<leader>d", '"_d', { desc = "Delete to black hole" })
+map("v", "<leader>d", '"_d', { desc = "Delete to black hole" })
