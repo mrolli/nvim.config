@@ -36,3 +36,6 @@ map("v", "<leader>p", '"+p', { desc = "Paste from clipboard" })
 -- Deliberately delete to black hole register
 map("n", "<leader>d", '"_d', { desc = "Delete to black hole" })
 map("v", "<leader>d", '"_d', { desc = "Delete to black hole" })
+
+-- Make file in current buffer executable
+map("n", "<leader>fx", "<cmd>silent !chmod +x %<CR>", { desc = "Make % executable" })
