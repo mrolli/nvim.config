@@ -22,3 +22,13 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.opt.tw = 80
   end,
 })
+
+vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnter" }, {
+  pattern = "*",
+  command = "set rnu",
+})
+
+vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinLeave" }, {
+  pattern = "*",
+  command = "set nornu",
+})
