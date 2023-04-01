@@ -7,3 +7,8 @@
 vim.opt.clipboard = ""
 -- add a highlighted column
 vim.opt.colorcolumn = "80"
+
+-- configure folding for Treesitter usage
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 7
