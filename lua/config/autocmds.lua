@@ -18,17 +18,15 @@
 -- Automatically set text width for markdown files
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "markdown" },
-  callback = function()
-    vim.opt.tw = 80
-  end,
+  command = "set tw=80",
 })
 
 vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnter" }, {
   pattern = "*",
-  command = "set rnu",
+  command = 'if &nu && mode() != "i" | set rnu   | endif',
 })
 
 vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinLeave" }, {
   pattern = "*",
-  command = "set nornu",
+  command = "if &nu | set nornu | endif",
 })
