@@ -13,6 +13,16 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
+-- These remaps make the jumps scroll to the middle of
+-- the screen for less eye distraction
+map("n", "<C-o>", "<C-o>zz")
+map("n", "<C-i>", "<C-i>zz")
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
+map("n", "gd", "gdzzzv")
+
 --[[
   Using leader + y/Y to yank to unnameplus or paste from unnamedplus register.
   The register unnamedplus is the system's clipboard and is the default
