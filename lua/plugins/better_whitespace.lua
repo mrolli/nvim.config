@@ -1,11 +1,6 @@
 -- Setup better whitespace plugin
 -- see https://github.com/ntpeters/vim-better-whitespace
 
--- remove these two lines upon copying this template
-if true then
-  return {}
-end
-
 return {
   {
     "ntpeters/vim-better-whitespace",
