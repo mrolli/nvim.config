@@ -19,12 +19,6 @@ return {
 
       -- now load the colorscheme here
       vim.cmd([[colorscheme gruvbox-material]])
-      -- set lualine to the same colorscheme
-      require("lualine").setup({
-        options = {
-          theme = "gruvbox-material",
-        },
-      })
     end,
   },
 }
