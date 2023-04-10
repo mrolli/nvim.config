@@ -4,8 +4,16 @@
 local window_width_limit = 100
 
 local conditions = {
+  buffer_not_empty = function()
+    return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
+  end,
   hide_in_width = function()
-    return vim.o.columns > window_width_limit
+      return vim.fn.winwidth(0) > window_width_limit
+  end,
+  check_git_workspace = function()
+    local filepath = vim.fn.expand('%:p:h')
+    local gitdir = vim.fn.finddir('.git', filepath .. ';')
+    return gitdir and #gitdir > 0 and #gitdir < #filepath
   end,
 }
 
@@ -17,7 +25,7 @@ local components = {
     cond = conditions.hide_in_width,
     padding = 0,
   },
-  fileformat = { "fileformat", icons_enabled = false },
+  fileformat = { "fileformat", icons_enabled = false, cond = conditions.hide_in_width },
   filetype = { "filetype", cond = nil, padding = 0 },
   location = { "location", cond = nil, padding = 0 },
   progress = { "progress", cond = nil, padding = 0 },
@@ -26,12 +34,14 @@ local components = {
       local shiftwidth = vim.api.nvim_buf_get_option(0, "shiftwidth")
       return " " .. shiftwidth
     end,
+    cond = nil,
     padding = 1 ,
   },
   time = {
     function()
       return " " .. os.date("%R")
     end,
+    cond = conditions.hide_in_width,
     padding = { left = 1, right = 0 }
   }
 }
