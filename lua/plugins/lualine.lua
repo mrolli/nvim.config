@@ -25,7 +25,16 @@ local components = {
     cond = conditions.hide_in_width,
     padding = 0,
   },
-  fileformat = { "fileformat", icons_enabled = false, cond = conditions.hide_in_width },
+  fileformat = {
+    'fileformat',
+    icons_enabled = true,
+    symbols = {
+      unix = 'LF',
+      dos = 'CRLF',
+      mac = 'CR',
+    },
+    cond = nil,
+  },
   filetype = { "filetype", cond = nil, padding = 0 },
   location = { "location", cond = nil, padding = 0 },
   progress = { "progress", cond = nil, padding = 0 },
