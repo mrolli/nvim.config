@@ -36,6 +36,7 @@ return {
         -- linters
         "ansible-lint",
         "flake8",
+        "markdownlint",
         "selene",
         "shellcheck",
         -- formatters
