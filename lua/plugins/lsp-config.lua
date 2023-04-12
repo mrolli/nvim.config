@@ -46,6 +46,26 @@ return {
     end,
   },
 
+  -- configuration changes on LSP servers
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      ---@type lspconfig.options
+      servers = {
+        ansiblels = {},
+        bashls = {},
+        pyright = {},
+        yamlls = {
+          settings = {
+            yaml = {
+              keyOrdering = false,
+            },
+          },
+        },
+      }
+    }
+  },
+
   -- null-ls
   {
     "jose-elias-alvarez/null-ls.nvim",
