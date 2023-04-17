@@ -56,6 +56,15 @@ return {
         ansiblels = {},
         bashls = {},
         pyright = {},
+        lua_ls = {
+          settings = {
+            Lua = {
+              diagnostics = {
+                disable = { "lowercase-global" }
+              },
+            },
+          },
+        },
         yamlls = {
           settings = {
             yaml = {
